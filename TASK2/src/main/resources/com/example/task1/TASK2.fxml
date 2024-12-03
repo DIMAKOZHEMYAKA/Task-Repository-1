@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<VBox prefHeight="373.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task1.Controller">
+   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <Label text="Заливка" />
+         <ColorPicker fx:id="FillColor">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+            <value>
+               <Color />
+            </value>
+         </ColorPicker>
+         <Label text="Контур" />
+         <ColorPicker fx:id="BorderColor">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+            <value>
+               <Color />
+            </value>
+         </ColorPicker>
+      </children>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+   </FlowPane>
+   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <TextField fx:id="FieldSide" prefWidth="70.0" promptText="Длина">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </TextField>
+         <TextField fx:id="FieldQuantity" prefWidth="70.0" promptText="Кол-во">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin></TextField>
+         <TextField fx:id="FieldX" prefWidth="70.0" promptText="Введите X">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin></TextField>
+         <TextField fx:id="FieldY" prefWidth="70.0" promptText="Введите Y">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin></TextField>
+      </children>
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+   </FlowPane>
+   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <Label alignment="CENTER" prefWidth="70.0" text="Сторона">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </Label>
+         <Label alignment="CENTER" prefWidth="70.0" text="Фигуры">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </Label>
+         <Label alignment="CENTER" prefWidth="70.0" text="X">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </Label>
+         <Label alignment="CENTER" prefWidth="70.0" text="Y">
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </Label>
+      </children>
+   </FlowPane>
+   <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: green;">
+      <children>
+         <Canvas fx:id="canvas" height="300" width="400">
+            <FlowPane.margin>
+               <Insets />
+            </FlowPane.margin>
+         </Canvas>
+      </children>
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+   </FlowPane>
+   <FlowPane alignment="CENTER">
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <children>
+         <Label text="Кол-во сторон" />
+         <ChoiceBox fx:id="SideQuantity" prefWidth="150.0" />
+         <Button mnemonicParsing="false" onAction="#DrawFigure" text="Draw">
+            <FlowPane.margin>
+               <Insets left="10.0" right="10.0" />
+            </FlowPane.margin>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#Clear" text="Clear">
+            <FlowPane.margin>
+               <Insets left="10.0" right="10.0" />
+            </FlowPane.margin></Button>
+      </children>
+   </FlowPane>
+</VBox>

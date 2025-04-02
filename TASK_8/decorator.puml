@@ -1,0 +1,91 @@
+@startuml
+class com.example.task_8.decorations.Presents {
+~ Rectangle gift1
+~ Rectangle gift2
+~ Rectangle gift3
++ void draw(Pane)
++ void remove(Pane)
+- void drawPresents(Pane)
+- void deletePresents(Pane)
+}
+
+
+interface com.example.task_8.christmas_tree.Tree {
+~ void draw(Pane)
+~ void remove(Pane)
+~ String decorate()
+}
+
+abstract class com.example.task_8.christmas_tree.TreeDecorator {
+- Tree tree
++ void draw(Pane)
++ void remove(Pane)
++ String decorate()
+}
+
+
+class com.example.task_8.decorations.Star {
+~ Polygon star
++ void draw(Pane)
++ void remove(Pane)
+- void drawStar(Pane)
+- void deleteStar(Pane)
+}
+
+
+class com.example.task_8.HelloController {
++ Pane paneTree
+- Button ballsButton
+- Button presentsButton
+- Button starButton
+- Label ballsLabel
+- Label presentLabel
+- Label starLabel
+- Tree tree
++ void initialize(URL,ResourceBundle)
++ void addBalls(ActionEvent)
++ void addPresents(ActionEvent)
++ void addStar(ActionEvent)
++ void addAllDecorations(ActionEvent)
++ void removeBalls(ActionEvent)
++ void removePresents(ActionEvent)
++ void removeStar(ActionEvent)
++ void removeAllDecorations(ActionEvent)
+}
+
+
+class com.example.task_8.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+class com.example.task_8.christmas_tree.TreeImpl {
++ void draw(Pane)
++ void remove(Pane)
++ String decorate()
+}
+
+class com.example.task_8.decorations.Balls {
+~ FillTransition ft
+~ Circle ball1
+~ Circle ball2
+~ Circle ball3
+~ Circle ball4
++ void draw(Pane)
++ void remove(Pane)
+- void drawBalls(Pane)
+- void createBlinkingEffect(Circle)
+- void deleteBalls(Pane)
+}
+
+
+
+
+com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Presents
+com.example.task_8.christmas_tree.Tree <|.. com.example.task_8.christmas_tree.TreeDecorator
+com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Star
+javafx.fxml.Initializable <|.. com.example.task_8.HelloController
+javafx.application.Application <|-- com.example.task_8.HelloApplication
+com.example.task_8.christmas_tree.Tree <|.. com.example.task_8.christmas_tree.TreeImpl
+com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Balls
+@enduml

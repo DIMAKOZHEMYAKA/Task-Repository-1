@@ -1,63 +1,182 @@
 @startuml
-class com.example.task_8.decorations.Presents {
-~ Rectangle gift1
-~ Rectangle gift2
-~ Rectangle gift3
-+ void draw(Pane)
-+ void remove(Pane)
-- void drawPresents(Pane)
-- void deletePresents(Pane)
+class Models.Shapes.ShapeFactory {
+- HashMap<Integer,Shape> shapes
++ Shape createShape(int)
 }
 
 
-interface com.example.task_8.christmas_tree.Tree {
-~ void draw(Pane)
-~ void remove(Pane)
-~ String decorate()
-}
-
-abstract class com.example.task_8.christmas_tree.TreeDecorator {
-- Tree tree
-+ void draw(Pane)
-+ void remove(Pane)
-+ String decorate()
+class Models.Shapes.Hexagon {
+- double sideLength
+- Color ColorStroke
+~ double area()
++ void draw(GraphicsContext)
++ void setSize(double)
++ double[] getBounds()
++ String toString()
 }
 
 
-class com.example.task_8.decorations.Star {
-~ Polygon star
-+ void draw(Pane)
-+ void remove(Pane)
-- void drawStar(Pane)
-- void deleteStar(Pane)
+class Models.Shapes.Square {
+- double sideLength
+- Color ColorStroke
+~ double area()
++ void draw(GraphicsContext)
++ void setSize(double)
++ double[] getBounds()
++ String toString()
 }
 
 
-class com.example.task_8.christmas_tree.TreeImpl {
-+ void draw(Pane)
-+ void remove(Pane)
-+ String decorate()
-}
-
-class com.example.task_8.decorations.Balls {
-~ FillTransition ft
-~ Circle ball1
-~ Circle ball2
-~ Circle ball3
-~ Circle ball4
-+ void draw(Pane)
-+ void remove(Pane)
-- void drawBalls(Pane)
-- void createBlinkingEffect(Circle)
-- void deleteBalls(Pane)
+class Models.Shapes.Decorate {
+# Shape shape
+# Paint paint
+# Effect effect
+# List<Addon> addons
++ void setPaint(Paint)
++ void setAddons(List<Addon>)
++ void setEffect(Effect)
++ void draw(GraphicsContext)
++ Shape getShape()
 }
 
 
+interface Models.Addons.Addon {
+~ void draw(GraphicsContext)
+}
+
+class Models.Shapes.Momento {
+- Queue<Object> momentoList
++ void push(Object)
++ Object poll()
++ boolean remove(Object)
++ int getSize()
++ ArrayList<Object> getListShapes()
+}
 
 
-com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Presents
-com.example.task_8.christmas_tree.Tree <|.. com.example.task_8.christmas_tree.TreeDecorator
-com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Star
-com.example.task_8.christmas_tree.Tree <|.. com.example.task_8.christmas_tree.TreeImpl
-com.example.task_8.christmas_tree.TreeDecorator <|-- com.example.task_8.decorations.Balls
+abstract class Models.Shapes.Shape {
+# Color color
+# double x
+~ {abstract}double area()
++ {abstract}void draw(GraphicsContext)
++ void setColor(Color)
++ void setColorStroke(Color)
++ void setXY(double,double)
++ {abstract}void setSize(double)
++ Object clone()
++ double getX()
++ double getY()
++ {abstract}double[] getBounds()
+}
+
+
+class Models.Addons.Split {
+# Decorate decorate
++ void draw(GraphicsContext)
+}
+
+
+enum Models.Effects.EffectEnum {
++  NONE
++  DROP_SHADOW
++  BLUR
++  INNER_SHADOW
+}
+
+class Models.Shapes.Triangle {
+- double sideLength
+- Color ColorStroke
+~ double area()
++ void draw(GraphicsContext)
++ void setSize(double)
++ double[] getBounds()
++ String toString()
+}
+
+
+class Models.Shapes.Pentagon {
+- Color colorStroke
+- double sideLength
++ void draw(GraphicsContext)
++ void setSize(double)
++ double[] getBounds()
+~ double area()
++ String toString()
+}
+
+
+class decoratorRep.Application {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+class decoratorRep.ShapeController {
+- Canvas canvas
+- ObservableList<Shape> shapeTypeObserve
+- ColorPicker fillColorPicker
+- ColorPicker strokeColorPicker
+- ComboBox<EffectEnum> effectCombo
+- CheckBox pulseCheckBox
+- CheckBox patternCheckBox
+- CheckBox splitCheckBox
+- TextField sizeField
+- ShapeFactory shapeFactory
+- EffectShape effectShape
+- Momento momento
+- ListView<Shape> listView
++ void initialize()
+- void drawShape(MouseEvent)
+- void clearCanvas()
+- void undoLast()
+}
+
+
+class Models.Effects.EffectShape {
+- EnumMap<EffectEnum,Effect> effectEnumMap
+- void initializeEffects()
++ Effect getEffect(EffectEnum)
++ EnumMap<EffectEnum,Effect> getAllEffects()
+}
+
+
+class Models.Shapes.Circle {
+- double radius
+- Color ColorStroke
+~ double area()
++ void draw(GraphicsContext)
++ void setSize(double)
++ double[] getBounds()
++ String toString()
+}
+
+
+class Models.Addons.PatternFill {
+- Decorate decorate
+- double spacing
++ void draw(GraphicsContext)
+}
+
+
+class Models.Addons.AnimatedPulse {
+- Decorate decorate
+- double currentScale
+- Timeline animation
++ void startAnimation()
++ void stopAnimation()
++ void draw(GraphicsContext)
+}
+
+
+
+
+Models.Shapes.Shape <|-- Models.Shapes.Hexagon
+Models.Shapes.Shape <|-- Models.Shapes.Square
+Models.Shapes.Cloneable <|.. Models.Shapes.Shape
+Models.Addons.Addon <|.. Models.Addons.Split
+Models.Shapes.Shape <|-- Models.Shapes.Triangle
+Models.Shapes.Shape <|-- Models.Shapes.Pentagon
+decoratorRep.Application <|-- decoratorRep.Application
+Models.Shapes.Shape <|-- Models.Shapes.Circle
+Models.Addons.Addon <|.. Models.Addons.PatternFill
+Models.Addons.Addon <|.. Models.Addons.AnimatedPulse
 @enduml

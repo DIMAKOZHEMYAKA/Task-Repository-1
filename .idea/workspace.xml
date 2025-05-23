@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3f8b0d-663f-4f1e-b7b7-fdcdf01f75b8" name="Changes" comment="" />
+    <list default="true" id="df3f8b0d-663f-4f1e-b7b7-fdcdf01f75b8" name="Changes" comment="please work">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Addons/PatternFill.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Addons/PatternFill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Decorate.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Decorate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Hexagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Hexagon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Pentagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Pentagon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/Models/Shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/java/decoratorRep/ShapeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/java/decoratorRep/ShapeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorator/src/main/resources/decoratorRep/shape-model.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/decorator/src/main/resources/decoratorRep/shape-model.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,18 +33,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DIMAKOZHEMYAKA"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DIMAKOZHEMYAKA&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/DIMAKOZHEMYAKA/Task-Repository-1.git",
-    "accountId": "b7c863a2-a4dc-438f-bca8-83086dcdeec2"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DIMAKOZHEMYAKA/Task-Repository-1.git&quot;,
+    &quot;accountId&quot;: &quot;b7c863a2-a4dc-438f-bca8-83086dcdeec2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -40,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Application.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/task8__chad",
     "ignore.virus.scanning.warn.message": "true",
@@ -47,6 +63,12 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="decoratorRep.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Task-Repository-1" />
       <method v="2">
@@ -70,6 +92,19 @@
       <option name="presentableId" value="Default" />
       <updated>1735061505816</updated>
     </task>
+    <task id="LOCAL-00001" summary="please work">
+      <option name="closed" value="true" />
+      <created>1743613091664</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743613091664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="please work" />
+    <option name="LAST_COMMIT_MESSAGE" value="please work" />
   </component>
 </project>

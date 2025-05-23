@@ -33,6 +33,11 @@ public class Pentagon extends Shape {
     }
 
     @Override
+    public void setSize(double size) {
+        this.sideLength = size;
+    }
+
+    @Override
     public double[] getBounds() {
         double radius = sideLength / (2 * Math.sin(Math.PI/5));
         double width = 2 * radius;
@@ -43,5 +48,8 @@ public class Pentagon extends Shape {
     @Override
     double area() {
         return (5 * sideLength * sideLength) / (4 * Math.tan(Math.PI / 5));
+    }
+    public String toString(){
+        return "Пятиугольник";
     }
 }

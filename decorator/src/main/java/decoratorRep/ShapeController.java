@@ -62,21 +62,21 @@ public class ShapeController {
         } catch (NumberFormatException e) {
             System.out.println("Неверный формат данных");
         }
-        Decorate decoratedShape = new Decorate(shape, fillColor, effectShape.getEffect(effectType));
+
         List<Addon> addons = new ArrayList<>();
-        if (pulseCheckBox.isSelected()) {
-            AnimatedPulse pulse = new AnimatedPulse(decoratedShape);
-            pulse.startAnimation();
-            addons.add(pulse);
-        }
+        Decorate decoratedShape = new Decorate(shape, fillColor, effectShape.getEffect(effectType));
         if (patternCheckBox.isSelected()) {
             addons.add(new PatternFill(decoratedShape, 10));
+            decoratedShape.setAddons(addons);
         }
         if (splitCheckBox.isSelected()) {
             addons.add(new Split(decoratedShape));
+            decoratedShape.setAddons(addons);
         }
+
         canvas.toFront();
         momento.push(decoratedShape);
+        decoratedShape.draw(gc);
     }
 
 
@@ -87,7 +87,7 @@ public class ShapeController {
 
     @FXML
     private void undoLast() {
-        if (momento.getSize() > 1) {
+        if (momento.getSize() >= 1) {
             GraphicsContext gc = canvas.getGraphicsContext2D();
             gc.setEffect(null);
             gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());

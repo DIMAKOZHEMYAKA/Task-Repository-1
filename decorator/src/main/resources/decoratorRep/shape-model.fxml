@@ -10,17 +10,16 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="646.0" prefWidth="1281.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="decoratorRep.ShapeController">
+<BorderPane prefHeight="646.0" prefWidth="1281.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="decoratorRep.ShapeController">
    <top>
       <ToolBar>
          <ListView fx:id="listView" prefHeight="216.0" prefWidth="200.0" />
          <ColorPicker fx:id="fillColorPicker" promptText="Цвет заливки" />
          <ColorPicker fx:id="strokeColorPicker" promptText="Цвет обводки" />
          <ComboBox fx:id="effectCombo" promptText="Эффект" />
-         <CheckBox fx:id="pulseCheckBox" text="Анимация пульсации" />
          <CheckBox fx:id="patternCheckBox" text="Точечный узор" />
          <CheckBox fx:id="splitCheckBox" text="Разделение на части" />
-         <Button onAction="#undoLast" text="Нарисовать" />
+         <Button onAction="#undoLast" text="Убрать первую" />
          <Button onAction="#clearCanvas" text="Очистить" />
          <TextField fx:id="sizeField" promptText="Размер" />
       </ToolBar>

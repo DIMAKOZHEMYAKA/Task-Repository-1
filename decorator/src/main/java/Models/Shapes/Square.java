@@ -3,30 +3,38 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 class Square extends Shape {
-    private double side;
+    private double sideLength;
     private Color ColorStroke;
 
-    public Square(Color color, Color ColorStroke, double x, double y, double side) {
+    public Square(Color color, Color ColorStroke, double x, double y, double sideLength) {
         super(color, x, y);
         this.ColorStroke = ColorStroke;
-        this.side = side;
+        this.sideLength = sideLength;
     }
 
     @Override
     double area() {
-        return side * side;
+        return sideLength * sideLength;
     }
 
     @Override
     public void draw(GraphicsContext gc) {
         gc.setStroke(ColorStroke);
         gc.setFill(color);
-        gc.fillRect(x, y, side,side);
-        gc.strokeRect(x, y, side,side);
+        gc.fillRect(x, y, sideLength, sideLength);
+        gc.strokeRect(x, y, sideLength, sideLength);
+    }
+
+    @Override
+    public void setSize(double size) {
+        this.sideLength = size;
     }
 
     @Override
     public double[] getBounds() {
-        return new double[]{side, side};
+        return new double[]{sideLength, sideLength};
+    }
+    public String toString(){
+        return "Квадрат";
     }
 }

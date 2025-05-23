@@ -35,11 +35,18 @@ class Hexagon extends Shape {
     }
 
     @Override
+    public void setSize(double size) {
+        this.sideLength = size;
+    }
+
+    @Override
     public double[] getBounds() {
         double width = 2 * sideLength;
         double height = sideLength * Math.sqrt(3);
         return new double[]{width, height};
     }
 
-
+    public String toString(){
+        return "Шестиугольник";
+    }
 }

@@ -27,8 +27,16 @@ class Circle extends Shape {
     }
 
     @Override
+    public void setSize(double size) {
+        this.radius = size;
+    }
+
+    @Override
     public double[] getBounds() {
         return new double[]{2 * radius, 2 * radius};
     }
-
+    @Override
+    public String toString(){
+        return "Круг";
+    }
 }

@@ -3,7 +3,7 @@ package Models.Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public abstract class Shape {
+public abstract class Shape implements Cloneable {
     protected Color color;
     protected double x, y;
 
@@ -28,9 +28,7 @@ public abstract class Shape {
         this.y = y;
     }
 
-    public void setSize(double size) {
-
-    }
+    public abstract void setSize(double size);
 
     public Object clone() {
         Object clone = null;

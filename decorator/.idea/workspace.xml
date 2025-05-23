@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2e831f6-a98e-4060-b589-b7f773afb69d" name="Changes" comment="Created EffectShape.java, EffectEnum.java.&#10;Enum stores various effects, EffectShape utilizes them">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/Addon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/AnimatedPulse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/PatternFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/Split.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Effects/EffectEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Effects/EffectShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Decorate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Momento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Pentagon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/decoratorRep/shape-model.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NewExcelConverter/src/main/java/Converter/Controller/ConvController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NewExcelConverter/src/main/java/Converter/ProcessingUnit/ProcessingUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Hexagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Hexagon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Pentagon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/ShapeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatherass/decorator/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/decoratorRep/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatherass/decorator/ShapeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/decoratorRep/ShapeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fatherass/decorator/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

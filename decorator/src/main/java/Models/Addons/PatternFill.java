@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.StrokeLineCap;
 
-public class PatternFill implements Addon {
+public class    PatternFill implements Addon {
     private final Decorate decorate;
     private final double spacing;
 

@@ -24,6 +24,9 @@ public class Decorate {
     public void setPaint(Paint paint) {
         this.paint = paint;
     }
+    public void setAddons(List<Addon> addons){
+        this.addons = addons;
+    }
 
     public void setEffect(Effect effect) {
         this.effect = effect;
@@ -33,13 +36,11 @@ public class Decorate {
         gr.setFill(paint);
         gr.setEffect(effect);
         shape.draw(gr);
-        for(Addon a: addons) {
-            a.draw(gr);
+        if (addons != null){
+            for(Addon a: addons) {
+                a.draw(gr);
+            }
         }
-    }
-
-    public void setAddons(List<Addon> addons) {
-        this.addons = addons;
     }
 
     public Shape getShape() {

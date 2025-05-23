@@ -8,7 +8,6 @@ public class Momento {
 
     private Queue<Object> momentoList = new ArrayDeque<>();
 
-
     public void push(Object state) {
         momentoList.add(state);
     }

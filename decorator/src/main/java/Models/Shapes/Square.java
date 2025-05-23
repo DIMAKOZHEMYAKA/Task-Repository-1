@@ -1,4 +1,4 @@
-package Shapes;
+package Models.Shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -18,10 +18,15 @@ class Square extends Shape {
     }
 
     @Override
-    void draw(GraphicsContext gc) {
+    public void draw(GraphicsContext gc) {
         gc.setStroke(ColorStroke);
         gc.setFill(color);
         gc.fillRect(x, y, side,side);
         gc.strokeRect(x, y, side,side);
+    }
+
+    @Override
+    public double[] getBounds() {
+        return new double[]{side, side};
     }
 }

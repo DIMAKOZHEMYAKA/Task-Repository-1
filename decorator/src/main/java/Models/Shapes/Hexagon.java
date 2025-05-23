@@ -1,4 +1,4 @@
-package Shapes;
+package Models.Shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -19,7 +19,7 @@ class Hexagon extends Shape {
     }
 
     @Override
-    void draw(GraphicsContext gc) {
+    public void draw(GraphicsContext gc) {
         gc.setStroke(ColorStroke);
         gc.setFill(color);
         double angle = Math.PI / 3;
@@ -32,6 +32,13 @@ class Hexagon extends Shape {
         }
         gc.fillPolygon(xPoints, yPoints, 6);
         gc.strokePolygon(xPoints, yPoints, 6);
+    }
+
+    @Override
+    public double[] getBounds() {
+        double width = 2 * sideLength;
+        double height = sideLength * Math.sqrt(3);
+        return new double[]{width, height};
     }
 
 

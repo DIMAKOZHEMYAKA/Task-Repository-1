@@ -1,4 +1,4 @@
-package Shapes;
+package Models.Shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -19,11 +19,16 @@ class Circle extends Shape {
     }
 
     @Override
-    void draw(GraphicsContext gc) {
+    public void draw(GraphicsContext gc) {
         gc.setStroke(ColorStroke);
         gc.setFill(color);
         gc.fillOval(x - radius, y - radius, radius * 2, radius * 2);
         gc.strokeOval(x - radius, y - radius, radius * 2, radius * 2);
+    }
+
+    @Override
+    public double[] getBounds() {
+        return new double[]{2 * radius, 2 * radius};
     }
 
 }

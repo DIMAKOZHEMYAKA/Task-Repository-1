@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2e831f6-a98e-4060-b589-b7f773afb69d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Shapes/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Shapes/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Shapes/ShapeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f2e831f6-a98e-4060-b589-b7f773afb69d" name="Changes" comment="Created EffectShape.java, EffectEnum.java.&#10;Enum stores various effects, EffectShape utilizes them">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/Addon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/AnimatedPulse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/PatternFill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Addons/Split.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Effects/EffectEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Effects/EffectShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Decorate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Momento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Pentagon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/decoratorRep/shape-model.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatherass/decorator/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatherass/decorator/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fatherass/decorator/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fatherass/decorator/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Hexagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Hexagon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Pentagon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/ShapeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fatherass/decorator/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/decoratorRep/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fatherass/decorator/ShapeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/decoratorRep/ShapeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fatherass/decorator/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -57,12 +74,21 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/task8__chad&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dom/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/IDEA COMMUNITY/Projects/Task-Repository-1/decorator/src/main/java/Shapes&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA COMMUNITY\Projects\Task-Repository-1\decorator\src\main\java\Shapes" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="decoratorRep" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,6 +98,15 @@
       <option name="presentableId" value="Default" />
       <updated>1743612523978</updated>
     </task>
+    <task id="LOCAL-00001" summary="Created abstract class Shapes, HashMap &quot;ShapeController&quot; for ObservableList that will visualize existing shapes.">
+      <option name="closed" value="true" />
+      <created>1744223826170</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744223826170</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -84,5 +119,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created abstract class Shapes, HashMap &quot;ShapeController&quot; for ObservableList that will visualize existing shapes." />
+    <MESSAGE value="Updated Shapes, Created few Addons for shapes." />
+    <MESSAGE value="Created EffectShape.java, EffectEnum.java.&#10;Enum stores various effects, EffectShape utilizes them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created EffectShape.java, EffectEnum.java.&#10;Enum stores various effects, EffectShape utilizes them" />
   </component>
 </project>

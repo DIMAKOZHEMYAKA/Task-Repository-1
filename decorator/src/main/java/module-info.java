@@ -1,8 +1,9 @@
-module fatherass.decorator {
+module decorator {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens fatherass.decorator to javafx.fxml;
-    exports fatherass.decorator;
+    opens decoratorRep to javafx.fxml;
+    exports decoratorRep;
+
 }

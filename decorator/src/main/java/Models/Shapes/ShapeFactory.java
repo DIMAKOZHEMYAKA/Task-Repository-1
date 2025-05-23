@@ -1,7 +1,6 @@
-package Shapes;
+package Models.Shapes;
 
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Ellipse;
 
 import java.util.HashMap;
 

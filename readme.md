@@ -6,7 +6,10 @@
 
 **Скриншот рабочего окна приложения**:
 
-![Скриншот программы](![image](https://github.com/user-attachments/assets/0910493e-5da7-4474-ba76-e1afc78e7971))!
+![screen](https://github.com/user-attachments/assets/9ae67c00-2e04-4e6a-bd06-836d0108a51f)
+
+
 
 ## Архитектура
-![UML model](![image](https://github.com/user-attachments/assets/a33b2b1e-9209-4e38-85a7-f11b7d1e1617))!
+
+![Uml model](https://github.com/user-attachments/assets/d05fefed-0818-4553-8745-838d5807417a)

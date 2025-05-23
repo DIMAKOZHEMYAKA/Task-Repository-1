@@ -6,17 +6,17 @@ import java.util.Queue;
 
 public class Momento {
 
-    private Queue<Object> momentoList = new ArrayDeque<>();
+    private Queue<Decorate> momentoList = new ArrayDeque<>();
 
-    public void push(Object state) {
+    public void push(Decorate state) {
         momentoList.add(state);
     }
 
-    public Object poll() {
+    public Decorate poll() {
         return momentoList.poll();
     }
 
-    public boolean remove(Object state) {
+    public boolean remove(Decorate state) {
         return momentoList.remove(state);
     }
 
@@ -24,12 +24,16 @@ public class Momento {
         return momentoList.size();
     }
 
-    public ArrayList<Object> getListShapes() {
-        ArrayList<Object> objects = new ArrayList<>();
-        for (Object item: momentoList){
-            objects.add(item);
-        }
-        return objects;
-    }
+//    public ArrayList<Decorate> getListShapes() {
+//        ArrayList<Decorate> objects = new ArrayList<>();
+//        for (Decorate item: momentoList){
+//            objects.add(item);
+//        }
+//        return objects;
+//    }
 
+
+    public Queue<Decorate> getMomentoList() {
+        return momentoList;
+    }
 }

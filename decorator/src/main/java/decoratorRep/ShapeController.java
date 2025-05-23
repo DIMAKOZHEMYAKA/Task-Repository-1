@@ -92,7 +92,7 @@ public class ShapeController {
             gc.setEffect(null);
             gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
             momento.poll();
-            for (Object item : momento.getListShapes()) {  ((Decorate) item).draw(gc);    }
+            for (Decorate item : momento.getMomentoList()) {   item.draw(gc);    }
         } else {
             clearCanvas();
         }

@@ -4,11 +4,10 @@ import javafx.scene.paint.Color;
 
 class Square extends Shape {
     private double sideLength;
-    private Color ColorStroke;
 
     public Square(Color color, Color ColorStroke, double x, double y, double sideLength) {
         super(color, x, y);
-        this.ColorStroke = ColorStroke;
+        this.colorStroke = ColorStroke;
         this.sideLength = sideLength;
     }
 
@@ -19,7 +18,7 @@ class Square extends Shape {
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setStroke(ColorStroke);
+        gc.setStroke(colorStroke);
         gc.setFill(color);
         gc.fillRect(x, y, sideLength, sideLength);
         gc.strokeRect(x, y, sideLength, sideLength);
@@ -36,5 +35,11 @@ class Square extends Shape {
     }
     public String toString(){
         return "Квадрат";
+    }
+
+    public boolean contains(double clickX, double clickY) {
+        double halfSize = sideLength / 2;
+        return clickX >= x - halfSize && clickX <= x + halfSize &&
+                clickY >= y - halfSize && clickY <= y + halfSize;
     }
 }

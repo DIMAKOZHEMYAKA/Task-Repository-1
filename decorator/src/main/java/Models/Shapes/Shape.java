@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 
 public abstract class Shape implements Cloneable {
     protected Color color;
+    protected Color colorStroke;
     protected double x, y;
 
     public Shape(Color color, double x, double y) {
@@ -20,7 +21,12 @@ public abstract class Shape implements Cloneable {
         this.color = color;
     }
 
+    public Color getColorStroke() {
+        return colorStroke;
+    }
+
     public void setColorStroke(Color colorStroke) {
+        this.colorStroke = colorStroke;
     }
 
     public void setXY(double x, double y) {
@@ -48,5 +54,7 @@ public abstract class Shape implements Cloneable {
         return y;
     }
     public abstract double[] getBounds();
+
+    public abstract boolean contains(double clickX, double clickY);
 }
 

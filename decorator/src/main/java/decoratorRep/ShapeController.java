@@ -14,6 +14,7 @@ import Models.Addons.*;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import linker.Composite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,11 @@ public class ShapeController {
     private final EffectShape effectShape = new EffectShape();
     @FXML private Momento momento = new Momento();
     @FXML private ListView<Shape> listView;
+    private ObservableList<String> listWorkMode;
+    @FXML
+    private ChoiceBox choiceWorkMode;
+    private Composite composite = new Composite();
+    private double startX, startY;
     @FXML
     public void initialize() {
         // Заполняю listView типами фигур
@@ -43,6 +49,11 @@ public class ShapeController {
         // Заполняю ComboBox эффектами
         effectCombo.getItems().addAll(EffectEnum.values());
         effectCombo.getSelectionModel().selectFirst();
+        listWorkMode = FXCollections.observableArrayList("Рисование", "Выделение", "Перемещение");
+        choiceWorkMode.setItems(listWorkMode);
+        choiceWorkMode.setValue(listWorkMode.getFirst());
+        choiceWorkMode.getSelectionModel().selectedIndexProperty().addListener((_, _, t1) -> setWorkMode(t1.intValue()));
+        canvas.setOnMousePressed(this::drawShape);
     }
 
     @FXML
@@ -92,11 +103,70 @@ public class ShapeController {
             gc.setEffect(null);
             gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
             momento.poll();
-            for (Decorate item : momento.getMomentoList()) {   item.draw(gc);    }
+            momentoDraw(gc);
         } else {
             clearCanvas();
         }
         canvas.toFront();
     }
 
+    public void setWorkMode(int num) {
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        String choice = listWorkMode.get(num);
+        if (choice.equals("Рисование")) {
+            composite.remove();
+            clearBox();
+            momentoDraw(gc);
+            canvas.setOnMouseDragged(null);
+            canvas.setOnMousePressed(this::drawShape);
+        } else if (choice.equals("Выделение")) {
+            canvas.setOnMouseDragged(null);
+            canvas.setOnMousePressed(this::selectShape);
+        } else {
+            canvas.setOnMouseDragged(this::dragMoveSelectedShape);
+            canvas.setOnMousePressed(this::startMoveSelectedShape);
+        }
+    }
+
+    private void clearBox() {
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.setFill(null);
+        graphicsContext.setEffect(null);
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+    }
+    public void selectShape(MouseEvent mouseEvent) {
+        Decorate decorate = null;
+        for (Decorate item : momento.getMomentoList()) {
+            if (item.getShape().contains(mouseEvent.getX(), mouseEvent.getY())) {
+                decorate = item;
+            }
+        }
+        if (decorate != null) {
+            composite.select(decorate, canvas.getGraphicsContext2D());
+            momentoDraw(canvas.getGraphicsContext2D());
+        }
+    }
+    public void startMoveSelectedShape(MouseEvent mouseEvent) {
+        startX = mouseEvent.getX();
+        startY = mouseEvent.getY();
+        composite.saveCoord();
+    }
+    public void dragMoveSelectedShape(MouseEvent mouseEvent) {
+        clearBox();
+        composite.changeXY(mouseEvent.getX() - startX, mouseEvent.getY() - startY);
+        momentoDraw(canvas.getGraphicsContext2D());
+    }
+    public void momentoDraw(GraphicsContext gc){
+        for (Decorate item : momento.getMomentoList()) {   item.draw(gc);    }
+    }
+
+    @FXML
+    protected void deleteSelectedShape() {
+        ArrayList<Decorate> arrayList = composite.getArray();
+        for (Decorate decorate : arrayList) {
+            momento.remove(decorate);
+        }
+        clearBox();
+        momentoDraw(canvas.getGraphicsContext2D());
+    }
 }

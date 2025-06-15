@@ -5,11 +5,10 @@ import javafx.scene.paint.Color;
 
 class Circle extends Shape {
     private double radius;
-    private Color ColorStroke;
 
-    public Circle(Color color,Color ColorStroke, double x, double y, double radius) {
+    public Circle(Color color,Color colorStroke, double x, double y, double radius) {
         super(color, x, y);
-        this.ColorStroke = ColorStroke;
+        this.colorStroke = colorStroke;
         this.radius = radius;
     }
 
@@ -20,7 +19,7 @@ class Circle extends Shape {
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setStroke(ColorStroke);
+        gc.setStroke(colorStroke);
         gc.setFill(color);
         gc.fillOval(x - radius, y - radius, radius * 2, radius * 2);
         gc.strokeOval(x - radius, y - radius, radius * 2, radius * 2);
@@ -38,5 +37,14 @@ class Circle extends Shape {
     @Override
     public String toString(){
         return "Круг";
+    }
+
+    @Override
+    public boolean contains(double clickX, double clickY) {
+        // Вычисляем расстояние от центра круга до точки
+        double distanceSquared = Math.pow(clickX - x, 2) + Math.pow(clickY - y, 2);
+
+        // Сравниваем с квадратом радиуса (оптимизация - избегаем вычисления квадратного корня)
+        return distanceSquared <= radius * radius;
     }
 }

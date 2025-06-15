@@ -4,7 +4,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Pentagon extends Shape {
-    private Color colorStroke;
     private double sideLength;
 
     public Pentagon(Color color, Color colorStroke, double x, double y, double size) {
@@ -51,5 +50,36 @@ public class Pentagon extends Shape {
     }
     public String toString(){
         return "Пятиугольник";
+    }
+
+
+    @Override
+    public boolean contains(double clickX, double clickY) {
+        double radius = sideLength / (2 * Math.sin(Math.PI / 5));
+        int sides = 5;
+        double[] xPoints = new double[sides];
+        double[] yPoints = new double[sides];
+
+        // Вычисляем вершины пятиугольника
+        for (int i = 0; i < sides; i++) {
+            double angle = 2 * Math.PI * i / sides - Math.PI / 2;
+            xPoints[i] = x + radius * Math.cos(angle);
+            yPoints[i] = y + radius * Math.sin(angle);
+        }
+
+        // Алгоритм ray-casting
+        boolean inside = false;
+        for (int i = 0, j = sides - 1; i < sides; j = i++) {
+            double xi = xPoints[i], yi = yPoints[i];
+            double xj = xPoints[j], yj = yPoints[j];
+
+            // Проверяем, пересекает ли луч (горизонтальный вправо) ребро многоугольника
+            boolean intersect = ((yi > clickY) != (yj > clickY))
+                    && (clickX < (xj - xi) * (clickY - yi) / (yj - yi) + xi);
+            if (intersect) {
+                inside = !inside;
+            }
+        }
+        return inside;
     }
 }

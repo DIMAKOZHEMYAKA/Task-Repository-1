@@ -5,11 +5,10 @@ import javafx.scene.paint.Color;
 
 class Hexagon extends Shape {
     private double sideLength;
-    private Color ColorStroke;
 
-    public Hexagon(Color color, Color ColorStroke,double x, double y, double sideLength) {
+    public Hexagon(Color color, Color colorStroke,double x, double y, double sideLength) {
         super(color, x, y);
-        this.ColorStroke = ColorStroke;
+        this.colorStroke = colorStroke;
         this.sideLength = sideLength;
     }
 
@@ -20,7 +19,7 @@ class Hexagon extends Shape {
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setStroke(ColorStroke);
+        gc.setStroke(colorStroke);
         gc.setFill(color);
         double angle = Math.PI / 3;
         double[] xPoints = new double[6];
@@ -48,5 +47,33 @@ class Hexagon extends Shape {
 
     public String toString(){
         return "Шестиугольник";
+    }
+
+    @Override
+    public boolean contains(double clickX, double clickY) {
+        // Вычисляем координаты вершин шестиугольника
+        double angle = Math.PI / 3;
+        double[] xPoints = new double[6];
+        double[] yPoints = new double[6];
+
+        for (int i = 0; i < 6; i++) {
+            xPoints[i] = x + sideLength * Math.cos(i * angle);
+            yPoints[i] = y + sideLength * Math.sin(i * angle);
+        }
+
+        // Алгоритм ray-casting для проверки нахождения точки внутри многоугольника
+        boolean inside = false;
+        for (int i = 0, j = 5; i < 6; j = i++) {
+            double xi = xPoints[i], yi = yPoints[i];
+            double xj = xPoints[j], yj = yPoints[j];
+
+            // Проверяем пересечение луча с ребром многоугольника
+            boolean intersect = ((yi > clickY) != (yj > clickY))
+                    && (clickX < (xj - xi) * (clickY - yi) / (yj - yi) + xi);
+            if (intersect) {
+                inside = !inside;
+            }
+        }
+        return inside;
     }
 }

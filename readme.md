@@ -6,7 +6,7 @@
 
 **Скриншот рабочего окна приложения**:
 
-![screen](https://github.com/user-attachments/assets/9ae67c00-2e04-4e6a-bd06-836d0108a51f)
+![image](https://github.com/user-attachments/assets/2a3007fc-e2f0-4cbc-9a56-66c06ea9306e)
 
 
 
